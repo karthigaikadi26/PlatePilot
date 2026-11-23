@@ -1,88 +1,97 @@
-<<<<<<< HEAD
 # PlatePilot — Eat well. Spend smart.
 
-PlatePilot is a responsive student-focused meal planning mini-project. It helps college students and hostel residents explore affordable Indian meals, generate a weekly plan, review estimated nutrition, and prepare a shopping checklist.
+PlatePilot is a responsive student-focused meal planning and nutrition budgeting web application. It helps college students and hostel residents explore affordable Indian meals, generate a weekly plan, review estimated nutrition and grocery spend, manage a consolidated shopping checklist, and exchange hostel cooking hacks.
 
-## Features
+## Architecture & Improvements
 
-- Responsive landing page and six linked pages.
-- Meal planner with daily budget, vegetarian / vegan / non-vegetarian preference, fitness goal, meal count and ingredient exclusions.
-- Weekly plan generation with a simple protein-per-rupee / budget-aware selection heuristic.
-- Dashboard with estimated spend, protein and calorie comparison.
-- Recipe catalogue loaded from `data/recipes.json`, with search and diet filters.
-- Shopping list generated from the saved plan, with checkboxes, custom items and print support.
-- Community tip board with likes.
-- Browser persistence through `localStorage`.
-- Print-friendly pages; use the browser's **Save as PDF** destination for PDF export.
-- Express server with health and recipe API endpoints.
+- **Full-Stack Persistence**: Built-in SQLite database (`platepilot.db`) with automatic table creation, relations, constraints, and data seeding via `database.js`.
+- **Hybrid Storage Client**: `storage.js` seamlessly syncs data with the SQLite REST API while maintaining automatic local storage fallback for offline support.
+- **RESTful API**: Comprehensive endpoints for recipes, meal plans, shopping list items, community tips, and user preferences (`server.js`).
+- **Category-Aware Meal Optimizer**: Slot-based heuristic generation (`optimizer.js`) assigning distinct meals for Breakfast, Lunch, Dinner, and Snack, respecting daily budgets, fitness goals (Muscle Building, Weight Management, Balanced Eating), allergy/ingredient exclusions, and meal variety.
+- **Interactive Recipe Catalogue**: 24+ rich, budget-friendly student recipes with detailed ingredients, step-by-step cooking instructions, diet filters, and custom recipe submission.
+- **Weekly Shopping Checklist**: Automatically consolidated from active meal plans with category grouping, checkboxes synchronized with SQLite, custom item additions, and one-click clipboard copying.
+- **Nutrition & Spend Analytics**: Dashboard featuring calorie intake trends, protein target tracking vs. recommended student RDA, and estimated savings compared to dining out.
+- **Community Tip Board**: Student-powered tip feed with categorization, like tracking, and direct SQLite storage.
+- **UI & UX Polish**: Non-blocking toast notification system, responsive modal dialogs, real-time budget sliders, and mobile drawer navigation.
 
-## Requirements
+---
 
-- Node.js 18+ and npm.
-- A modern browser.
+## Quick Start
 
-## Run in VS Code
+### 1. Requirements
+- Node.js 18+ (tested on Node.js v26.13.1)
+- npm
 
-1. Extract the `PlatePilot` folder.
-2. Open the folder in Visual Studio Code.
-3. Open Terminal → New Terminal.
-4. Run `npm install`.
-5. Run `npm start`.
-6. Visit `http://localhost:3000`.
+### 2. Installation & Running
+1. Open the project root folder in terminal:
+   ```bash
+   npm install
+   ```
+2. Start the server:
+   ```bash
+   npm start
+   ```
+3. Visit `http://localhost:3000` in your browser.
 
-For auto-restart during development, run `npm run dev` (Node.js watch mode).
+For hot-reload during development:
+```bash
+npm run dev
+```
 
-### Run without Node
+---
 
-You can open `index.html` directly for the static pages. For recipe fetching, use the Express server or another local static server because browsers may block `fetch()` from a `file://` URL.
+## API Documentation
 
-## API
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/health` | Server health check and SQLite database status |
+| `GET` | `/api/recipes` | Recipe catalogue (supports `?diet=`, `?category=`, `?search=`, `?maxCost=`) |
+| `GET` | `/api/recipes/:id` | Retrieve single recipe details |
+| `POST` | `/api/recipes` | Create a new custom recipe |
+| `PUT` | `/api/recipes/:id` | Update an existing recipe |
+| `DELETE` | `/api/recipes/:id` | Delete recipe by ID |
+| `GET` | `/api/plan` | Fetch current active weekly meal plan |
+| `POST` | `/api/plan` | Save 7-day meal plan to SQLite database |
+| `DELETE` | `/api/plan` | Clear active meal plan |
+| `GET` | `/api/shopping` | Retrieve weekly shopping checklist items |
+| `POST` | `/api/shopping` | Add custom item to shopping checklist |
+| `PUT` | `/api/shopping/:id` | Toggle checked status of shopping item |
+| `DELETE` | `/api/shopping/:id` | Delete shopping item |
+| `POST` | `/api/shopping/clear-checked` | Remove checked shopping items |
+| `GET` | `/api/community` | Retrieve community tips and hacks |
+| `POST` | `/api/community` | Post new student tip |
+| `POST` | `/api/community/:id/like` | Upvote a community tip |
+| `GET` | `/api/preferences` | Retrieve saved user preferences |
+| `PUT` | `/api/preferences` | Update saved user preferences |
 
-- `GET /api/health` — server health check.
-- `GET /api/recipes` — recipe catalogue JSON.
+---
 
-## Project structure
+## Project Structure
 
 ```text
 PlatePilot/
-├── index.html
-├── planner.html
-├── dashboard.html
-├── shopping.html
-├── recipes.html
-├── community.html
-├── css/
-│   ├── style.css
-│   ├── responsive.css
-│   └── animations.css
-├── js/
-│   ├── app.js
-│   ├── planner.js
-│   ├── optimizer.js
-│   ├── dashboard.js
-│   ├── shopping.js
-│   ├── recipes.js
-│   └── storage.js
-├── data/
-│   └── recipes.json
-├── server/
-│   └── server.js
-├── assets/
-│   └── images/
-├── package.json
-└── README.md
+├── index.html          # Landing page with value proposition & overview
+├── planner.html        # Interactive 7-day meal planner
+├── dashboard.html      # Nutrition, calorie & budget analytics
+├── recipes.html        # Recipe catalogue with details modal & custom submission
+├── shopping.html       # Consolidated shopping checklist with SQLite sync
+├── community.html      # Community tips and hostel cooking hacks
+├── database.js         # SQLite database schema, initialization & CRUD queries
+├── server.js           # Express REST API server & static file host
+├── storage.js          # Client-side hybrid SQLite/LocalStorage storage layer
+├── optimizer.js        # Category-aware meal planning heuristic engine
+├── planner.js          # Meal planner page controller & meal swap handler
+├── dashboard.js        # Nutrition dashboard visualizations & analytics
+├── recipes.js          # Recipe search, filtering, and modal controller
+├── shopping.js         # Grocery checklist controller & progress tracker
+├── app.js              # Global UI utilities (toasts, modals, navigation)
+├── recipes.json        # Base seed recipe catalog (24 diverse meals)
+├── style.css           # Core design system, variables, modals, toasts
+├── responsive.css      # Responsive media queries (desktop, tablet, mobile)
+├── animations.css      # Smooth transitions and keyframe animations
+├── platepilot.db       # SQLite database file (created on startup)
+└── package.json        # Project metadata & npm scripts
 ```
 
-## Notes and limitations
-
-- Food prices and nutrition values are illustrative estimates, not live market data or clinical nutrition guidance. Actual costs vary by city, season, brand and portion.
-- The optimizer is a transparent demo heuristic, not a medical or dietetic recommendation engine.
-- Plans, community posts, likes and shopping checks are stored locally in the current browser. There is no account system or shared online community backend.
-- The visual food artwork uses emoji/CSS illustration so the project works without external image assets.
-
-## Customization
-
-Edit `data/recipes.json` to add recipes. Each recipe has `id`, `name`, `emoji`, `diet`, `cost`, `calories`, `protein`, `time`, `category`, `ingredients`, and `description`.
-=======
-# PlatePilot
->>>>>>> origin/main
+## License
+MIT

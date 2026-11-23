@@ -9,13 +9,14 @@
     "protein": 14,
     "time": 20,
     "category": "Breakfast",
-    "ingredients": [
-      "moong dal",
-      "onion",
-      "tomato",
-      "coriander"
-    ],
-    "description": "Protein-rich savoury pancakes with pantry-friendly ingredients."
+    "ingredients": ["moong dal", "onion", "tomato", "coriander", "green chilli"],
+    "description": "Protein-rich savoury pancakes with pantry-friendly soaked yellow lentils.",
+    "instructions": [
+      "Soak yellow moong dal for 2 hours (or overnight) and blend into a smooth batter with green chilli and ginger.",
+      "Mix in finely chopped onions, tomatoes, coriander leaves, and salt.",
+      "Heat a tawa with a few drops of oil and spread a ladle of batter thinly.",
+      "Cook on medium flame until golden brown on both sides. Serve with mint chutney or curd."
+    ]
   },
   {
     "id": 2,
@@ -27,13 +28,14 @@
     "protein": 8,
     "time": 15,
     "category": "Breakfast",
-    "ingredients": [
-      "poha",
-      "peanuts",
-      "onion",
-      "lemon"
-    ],
-    "description": "A quick, filling breakfast with a little crunch."
+    "ingredients": ["poha", "peanuts", "onion", "lemon", "curry leaves", "mustard seeds"],
+    "description": "A quick, filling breakfast with crunchy roasted peanuts and fresh lemon juice.",
+    "instructions": [
+      "Rinse flattened rice (poha) in a colander until soft, then drain and set aside.",
+      "Roast raw peanuts in half a teaspoon of oil until crunchy, then remove.",
+      "Splutter mustard seeds and curry leaves in the pan, then saute chopped onions and turmeric.",
+      "Gently fold in the softened poha, roasted peanuts, salt, and finish with freshly squeezed lemon juice."
+    ]
   },
   {
     "id": 3,
@@ -45,13 +47,14 @@
     "protein": 18,
     "time": 30,
     "category": "Lunch",
-    "ingredients": [
-      "rajma",
-      "rice",
-      "tomato",
-      "onion"
-    ],
-    "description": "A comforting classic with fibre and plant protein."
+    "ingredients": ["rajma", "rice", "tomato", "onion", "ginger", "garlic", "spices"],
+    "description": "A comforting North Indian classic packed with dietary fibre and plant protein.",
+    "instructions": [
+      "Boil soaked red kidney beans (rajma) in a cooker until completely tender.",
+      "Saute chopped onions, ginger-garlic paste, tomato puree, and basic masala spices until oil separates.",
+      "Add the boiled rajma with cooking broth and simmer on low heat for 12 minutes to thicken the gravy.",
+      "Serve warm over steamed basmati or brown rice with sliced onions."
+    ]
   },
   {
     "id": 4,
@@ -63,13 +66,14 @@
     "protein": 25,
     "time": 20,
     "category": "Dinner",
-    "ingredients": [
-      "paneer",
-      "roti",
-      "onion",
-      "tomato"
-    ],
-    "description": "A protein-forward meal that is easy to prepare."
+    "ingredients": ["paneer", "roti", "onion", "tomato", "green chilli", "coriander"],
+    "description": "A protein-forward scrambled cottage cheese dish paired with whole-wheat rotis.",
+    "instructions": [
+      "Crumble fresh paneer by hand and keep aside.",
+      "Saute chopped onions, green chillies, and tomatoes in a pan with turmeric and garam masala.",
+      "Fold in the crumbled paneer and toss on high flame for 3 minutes without drying it out.",
+      "Garnish with coriander leaves and pair with 2 warm whole wheat rotis."
+    ]
   },
   {
     "id": 5,
@@ -81,13 +85,14 @@
     "protein": 13,
     "time": 12,
     "category": "Lunch",
-    "ingredients": [
-      "chickpeas",
-      "cucumber",
-      "tomato",
-      "lemon"
-    ],
-    "description": "No-fuss salad with affordable, filling chickpeas."
+    "ingredients": ["chickpeas", "cucumber", "tomato", "lemon", "chaat masala"],
+    "description": "No-fuss raw salad with affordable, filling boiled chickpeas and crisp veggies.",
+    "instructions": [
+      "Rinse boiled or canned white kabuli chana in cold water and place in a mixing bowl.",
+      "Dice cucumber, red onion, and tomatoes into bite-sized cubes.",
+      "Toss with chaat masala, roasted cumin powder, black salt, and plenty of fresh lime juice.",
+      "Enjoy immediately as a refreshing high-fibre midday meal."
+    ]
   },
   {
     "id": 6,
@@ -99,13 +104,14 @@
     "protein": 22,
     "time": 15,
     "category": "Dinner",
-    "ingredients": [
-      "eggs",
-      "onion",
-      "tomato",
-      "roti"
-    ],
-    "description": "A familiar quick meal with a useful protein boost."
+    "ingredients": ["eggs", "onion", "tomato", "roti", "green chilli", "coriander"],
+    "description": "Street-style spiced egg scramble loaded with onions and eaten with whole-wheat rotis.",
+    "instructions": [
+      "Whisk 2 fresh eggs with salt and a pinch of turmeric in a small bowl.",
+      "Saute finely chopped onions and green chillies in a hot pan until lightly browned.",
+      "Add diced tomatoes and cook for 2 minutes, then pour in the whisked eggs.",
+      "Scramble rapidly until cooked through, sprinkle fresh coriander, and enjoy with rotis."
+    ]
   },
   {
     "id": 7,
@@ -117,13 +123,14 @@
     "protein": 11,
     "time": 10,
     "category": "Lunch",
-    "ingredients": [
-      "rice",
-      "curd",
-      "cucumber",
-      "curry leaves"
-    ],
-    "description": "Cooling, simple and especially useful on busy days."
+    "ingredients": ["rice", "curd", "cucumber", "curry leaves", "mustard seeds", "green chilli"],
+    "description": "Cooling South Indian comfort dish with probiotics, ideal for hot hostel days.",
+    "instructions": [
+      "Mash soft cooked rice lightly with fresh curd and a splash of milk or water.",
+      "Mix in diced cucumber and a pinch of salt.",
+      "Prepare a quick tadka: heat 1 tsp oil, splutter mustard seeds, curry leaves, and green chillies.",
+      "Pour tadka over the curd rice, stir gently, and serve cool."
+    ]
   },
   {
     "id": 8,
@@ -135,13 +142,14 @@
     "protein": 23,
     "time": 25,
     "category": "Dinner",
-    "ingredients": [
-      "soya chunks",
-      "rice",
-      "peas",
-      "spices"
-    ],
-    "description": "Budget-friendly plant protein in a one-pot meal."
+    "ingredients": ["soya chunks", "rice", "peas", "onion", "spices"],
+    "description": "Ultra budget-friendly plant protein powerhouse cooked in a fragrant one-pot rice meal.",
+    "instructions": [
+      "Soak soya chunks in hot salted water for 15 minutes, drain, and squeeze out all moisture thoroughly.",
+      "Heat oil in a pot, add whole spices (cumin, cardamom, bay leaf), sliced onion, and ginger-garlic paste.",
+      "Add squeezed soya chunks, green peas, biryani masala, and washed rice; saute for 2 minutes.",
+      "Add water, cover with lid, and cook on low flame for 12 minutes until fluffy."
+    ]
   },
   {
     "id": 9,
@@ -153,12 +161,14 @@
     "protein": 9,
     "time": 5,
     "category": "Snack",
-    "ingredients": [
-      "banana",
-      "curd",
-      "roasted seeds"
-    ],
-    "description": "A quick snack for the gap between classes."
+    "ingredients": ["banana", "curd", "roasted seeds", "honey"],
+    "description": "A quick, energizing sweet snack for the gap between university lectures.",
+    "instructions": [
+      "Whisk cold thick curd in a bowl until smooth.",
+      "Slice a ripe banana over the curd.",
+      "Top with roasted chia/pumpkin seeds and a drizzle of honey.",
+      "Serve cold immediately."
+    ]
   },
   {
     "id": 10,
@@ -170,12 +180,278 @@
     "protein": 34,
     "time": 30,
     "category": "Lunch",
-    "ingredients": [
-      "chicken",
-      "rice",
-      "onion",
-      "seasonal vegetables"
-    ],
-    "description": "A simple higher-protein plate; adjust portions to your needs."
+    "ingredients": ["chicken", "rice", "onion", "seasonal vegetables", "ginger", "garlic", "spices"],
+    "description": "Lean chicken curry with wholesome rice providing superior amino acids on a budget.",
+    "instructions": [
+      "Marinate boneless chicken pieces with curd, turmeric, red chilli powder, and salt.",
+      "Brown sliced onions and ginger-garlic paste in a pan until deeply golden.",
+      "Add marinated chicken and simmer with diced tomatoes and seasonal veggies for 18 minutes until tender.",
+      "Serve with steamed rice and a wedge of lemon."
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Boiled eggs & toast",
+    "emoji": "🥚",
+    "diet": "non-vegetarian",
+    "cost": 28,
+    "calories": 280,
+    "protein": 16,
+    "time": 10,
+    "category": "Breakfast",
+    "ingredients": ["eggs", "bread", "butter", "black pepper"],
+    "description": "Quick hostel staple with two hard-boiled eggs and crisp toasted bread.",
+    "instructions": [
+      "Boil 2 large eggs in salted water for 9 minutes for firm hard-boiled yolks.",
+      "Toast 2 slices of whole wheat or multigrain bread until golden.",
+      "Peel the eggs, slice in half, season with salt and crushed black pepper.",
+      "Serve hot with lightly buttered toast."
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Dal tadka with jeera rice",
+    "emoji": "🍲",
+    "diet": "vegan",
+    "cost": 36,
+    "calories": 460,
+    "protein": 16,
+    "time": 25,
+    "category": "Dinner",
+    "ingredients": ["toor dal", "rice", "cumin", "garlic", "tomato", "ghee"],
+    "description": "Aromatic yellow lentil curry tempered with golden cumin and garlic over fragrant rice.",
+    "instructions": [
+      "Pressure-cook yellow toor dal with turmeric and salt until creamy soft.",
+      "Cook basmati rice with cumin seeds (jeera) and a pinch of salt.",
+      "Make the tadka: heat oil or ghee, splutter cumin, minced garlic, dried red chilli, and diced tomatoes.",
+      "Pour sizzing tadka into the dal, swirl, and serve over hot jeera rice."
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Oats & peanut butter porridge",
+    "emoji": "🥣",
+    "diet": "vegetarian",
+    "cost": 26,
+    "calories": 340,
+    "protein": 14,
+    "time": 8,
+    "category": "Breakfast",
+    "ingredients": ["oats", "milk", "peanut butter", "banana"],
+    "description": "Creamy rolled oats simmered in warm milk, swirled with peanut butter and fruit.",
+    "instructions": [
+      "Boil 1 cup of milk (or water) in a small saucepan.",
+      "Add half a cup of rolled oats and cook on low heat for 4 minutes until thick and creamy.",
+      "Stir in a heaped tablespoon of peanut butter until melted.",
+      "Transfer to a bowl and top with sliced ripe banana."
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Besan chilla roll",
+    "emoji": "🌯",
+    "diet": "vegan",
+    "cost": 24,
+    "calories": 250,
+    "protein": 12,
+    "time": 15,
+    "category": "Breakfast",
+    "ingredients": ["besan", "onion", "tomato", "green chilli", "chaat masala"],
+    "description": "Crisp gram-flour crepes loaded with chopped veggies and rolled for on-the-go mornings.",
+    "instructions": [
+      "Whisk gram flour (besan) with water, carom seeds (ajwain), turmeric, and salt into a pourable batter.",
+      "Mix in finely minced onions, green chillies, and tomatoes.",
+      "Cook on a lightly greased pan for 3 minutes on each side until crisp.",
+      "Roll up tightly and serve with green coriander chutney."
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Palak paneer with roti",
+    "emoji": "🥬",
+    "diet": "vegetarian",
+    "cost": 52,
+    "calories": 440,
+    "protein": 24,
+    "time": 25,
+    "category": "Dinner",
+    "ingredients": ["spinach", "paneer", "roti", "onion", "garlic", "spices"],
+    "description": "Iron-rich vibrant spinach gravy cooked with soft cottage cheese cubes.",
+    "instructions": [
+      "Blanch washed spinach leaves in boiling water for 2 minutes, then plunge into cold water and blend smooth.",
+      "Saute minced garlic, chopped onion, and cumin in oil until fragrant.",
+      "Stir in the spinach puree, garam masala, and fresh paneer cubes.",
+      "Simmer for 5 minutes and serve with warm rotis."
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Egg sandwich",
+    "emoji": "🥪",
+    "diet": "non-vegetarian",
+    "cost": 32,
+    "calories": 330,
+    "protein": 17,
+    "time": 10,
+    "category": "Snack",
+    "ingredients": ["eggs", "bread", "onion", "tomato", "black pepper"],
+    "description": "Double egg toasted sandwich spiced with sliced onions and fresh cracked pepper.",
+    "instructions": [
+      "Make a quick 2-egg spiced omelette with chopped onion and chilli.",
+      "Toast 2 slices of whole wheat bread in a pan.",
+      "Place the folded omelette and fresh tomato slices between the bread slices.",
+      "Cut diagonally and enjoy warm with tea or coffee."
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Masala khichdi",
+    "emoji": "🍲",
+    "diet": "vegan",
+    "cost": 30,
+    "calories": 380,
+    "protein": 14,
+    "time": 20,
+    "category": "Dinner",
+    "ingredients": ["rice", "moong dal", "peas", "potato", "turmeric", "cumin"],
+    "description": "Comforting one-pot lentil and rice porridge cooked with veggies and mild spices.",
+    "instructions": [
+      "Wash equal portions of rice and split yellow moong dal together.",
+      "In a cooker, heat oil, add cumin, diced potato, peas, turmeric, and hing.",
+      "Add the dal-rice mix with 4 cups of water and salt.",
+      "Cook for 3 whistles, stir well, and enjoy with pickle or roasted papad."
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Roasted peanut chaat",
+    "emoji": "🥜",
+    "diet": "vegan",
+    "cost": 18,
+    "calories": 260,
+    "protein": 11,
+    "time": 5,
+    "category": "Snack",
+    "ingredients": ["peanuts", "onion", "tomato", "lemon", "coriander", "chaat masala"],
+    "description": "Crispy roasted peanuts tossed with onions, tangy lemon, and street spices.",
+    "instructions": [
+      "Take dry roasted salted or plain peanuts in a bowl.",
+      "Add finely chopped onion, tomato, and green chilli.",
+      "Sprinkle chaat masala, squeeze half a lemon, and toss thoroughly.",
+      "Garnish with chopped coriander for an instant hostel study snack."
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Aloo paratha with curd",
+    "emoji": "🫓",
+    "diet": "vegetarian",
+    "cost": 34,
+    "calories": 420,
+    "protein": 12,
+    "time": 20,
+    "category": "Breakfast",
+    "ingredients": ["atta", "potato", "curd", "green chilli", "coriander", "spices"],
+    "description": "Spiced mashed potato stuffed flatbread served with fresh cooling curd.",
+    "instructions": [
+      "Boil, peel, and mash 1 potato with chopped coriander, green chilli, amchur, and salt.",
+      "Roll out a portion of whole wheat dough, place the potato filling inside, seal, and roll flat.",
+      "Cook on a medium hot tawa with a little ghee or oil until crisp and brown on both sides.",
+      "Serve with a cup of chilled fresh curd."
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Chicken egg fried rice",
+    "emoji": "🍚",
+    "diet": "non-vegetarian",
+    "cost": 68,
+    "calories": 540,
+    "protein": 36,
+    "time": 20,
+    "category": "Dinner",
+    "ingredients": ["chicken", "eggs", "rice", "onion", "peas", "soy sauce"],
+    "description": "High-protein student dinner combining chicken cubes, scrambled egg, and rice.",
+    "instructions": [
+      "In a wok, scramble 1 egg with salt, then remove and set aside.",
+      "Stir-fry seasoned diced chicken pieces on high heat for 6 minutes until cooked.",
+      "Add sliced onions, peas, cooked cold rice, soy sauce, and black pepper.",
+      "Toss in the scrambled egg, mix on high heat for 2 minutes, and serve."
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Sprouts chaat bowl",
+    "emoji": "🌱",
+    "diet": "vegan",
+    "cost": 22,
+    "calories": 210,
+    "protein": 14,
+    "time": 8,
+    "category": "Snack",
+    "ingredients": ["sprouted moong", "cucumber", "tomato", "lemon", "black salt"],
+    "description": "Live sprouted green gram packed with active enzymes, vitamins, and protein.",
+    "instructions": [
+      "Steam or lightly microwave sprouted green moong for 2 minutes (or use fresh raw).",
+      "Combine with diced cucumber, tomato, and fresh mint or coriander leaves.",
+      "Season with roasted cumin powder, black salt, and freshly squeezed lemon juice.",
+      "Toss and enjoy crisp, refreshing nutrition."
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Soya bhurji roti",
+    "emoji": "🫓",
+    "diet": "vegan",
+    "cost": 28,
+    "calories": 360,
+    "protein": 26,
+    "time": 18,
+    "category": "Dinner",
+    "ingredients": ["soya granules", "roti", "onion", "tomato", "green chilli", "spices"],
+    "description": "High-protein vegan minced soya scramble cooked with spices and eaten with rotis.",
+    "instructions": [
+      "Soak soya granules or crushed chunks in boiling hot water for 10 minutes, squeeze dry.",
+      "Saute cumin seeds, chopped onions, ginger, and green chilli in 1 tsp oil.",
+      "Add chopped tomatoes and spices, then fold in the squeezed soya granules.",
+      "Cook for 6 minutes on medium heat, garnish with coriander, and serve with 2 rotis."
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Egg curry with rice",
+    "emoji": "🍛",
+    "diet": "non-vegetarian",
+    "cost": 45,
+    "calories": 450,
+    "protein": 21,
+    "time": 25,
+    "category": "Dinner",
+    "ingredients": ["eggs", "rice", "onion", "tomato", "ginger", "garlic", "spices"],
+    "description": "Two golden-fried boiled eggs simmered in a flavourful onion-tomato gravy.",
+    "instructions": [
+      "Hard-boil 2 eggs, peel, poke lightly with a fork, and shallow fry in turmeric-oil until golden.",
+      "In the same pan, saute minced onion, ginger-garlic paste, and tomato puree until thick.",
+      "Add coriander powder, garam masala, salt, and half a cup of water.",
+      "Drop in the eggs, simmer for 5 minutes, and serve with steamed rice."
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Seasonal fruit & roasted seeds",
+    "emoji": "🍎",
+    "diet": "vegan",
+    "cost": 18,
+    "calories": 140,
+    "protein": 4,
+    "time": 5,
+    "category": "Snack",
+    "ingredients": ["seasonal fruit", "roasted seeds", "lemon"],
+    "description": "Fresh sliced local seasonal fruit (apple, guava, papaya) topped with roasted seeds.",
+    "instructions": [
+      "Wash and slice fresh seasonal fruit of your choice.",
+      "Sprinkle a tablespoon of mixed roasted sunflower or pumpkin seeds.",
+      "Add a squeeze of lemon juice and a dash of chaat masala if desired."
+    ]
   }
 ]

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up — PlatePilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✳</span> PlatePilot
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="planner.html">Meal planner</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="shopping.html">Shopping list</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <a class="button button-small" href="login.html">Log in <span>↗</span></a>
+  </header>
+
+  <main class="container page-main" style="max-width:500px;margin-inline:auto;padding-top:40px">
+    <div class="panel" style="padding:32px">
+      <div style="text-align:center;margin-bottom:24px">
+        <span class="eyebrow">STUDENT REGISTRATION</span>
+        <h1 style="font:800 28px Manrope;margin:8px 0">Create your <em>Account</em></h1>
+        <p style="font-size:13px;color:var(--muted)">Personalized weekly meal planning and private grocery budgeting.</p>
+      </div>
+
+      <form id="register-form" style="display:grid;gap:16px">
+        <label style="display:grid;gap:6px;font-size:12px;font-weight:700">
+          Your full name *
+          <input type="text" id="name" required placeholder="e.g. Priya Sharma" style="padding:12px;border:1px solid var(--line);border-radius:8px">
+        </label>
+        <label style="display:grid;gap:6px;font-size:12px;font-weight:700">
+          Email address *
+          <input type="email" id="email" required placeholder="priya@college.edu" style="padding:12px;border:1px solid var(--line);border-radius:8px">
+        </label>
+        <label style="display:grid;gap:6px;font-size:12px;font-weight:700">
+          Password (min 6 characters) *
+          <input type="password" id="password" required minlength="6" placeholder="Create a secure password" style="padding:12px;border:1px solid var(--line);border-radius:8px">
+        </label>
+        <label style="display:grid;gap:6px;font-size:12px;font-weight:700">
+          Confirm password *
+          <input type="password" id="confirm-password" required minlength="6" placeholder="Re-enter password" style="padding:12px;border:1px solid var(--line);border-radius:8px">
+        </label>
+        <button type="submit" id="submit-btn" class="button button-full" style="margin-top:8px">Sign up for Free →</button>
+      </form>
+
+      <div style="text-align:center;margin-top:20px;font-size:13px;color:var(--muted)">
+        Already have an account? <a href="login.html" class="text-link" style="font-size:13px">Log in here</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">✳ PlatePilot</a>
+      <p>© <span data-year></span> PlatePilot</p>
+      <a href="index.html">Back to Home ↗</a>
+    </div>
+  </footer>
+
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector("#register-form");
+      const nameInput = document.querySelector("#name");
+      const emailInput = document.querySelector("#email");
+      const passInput = document.querySelector("#password");
+      const confirmInput = document.querySelector("#confirm-password");
+      const submitBtn = document.querySelector("#submit-btn");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passInput.value;
+        const confirmPass = confirmInput.value;
+
+        if (password !== confirmPass) {
+          PlatePilot.showToast("Passwords do not match. Please verify.", "error");
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Creating account...";
+
+        try {
+          await PlatePilotAuth.register(name, email, password);
+          PlatePilot.showToast("Account created successfully! Welcome to PlatePilot.", "success");
+          setTimeout(() => {
+            window.location.href = "planner.html";
+          }, 800);
+        } catch (err) {
+          PlatePilot.showToast(err.message, "error");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Sign up for Free →";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

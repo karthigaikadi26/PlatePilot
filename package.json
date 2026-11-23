@@ -1,16 +1,26 @@
 {
   "name": "platepilot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Affordable, nutritious meal planning for students and hostel residents.",
-  "main": "server/server.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "dev": "node --watch server/server.js"
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node test.js"
   },
   "dependencies": {
-    "express": "^4.21.2"
+    "bcryptjs": "^3.0.3",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.3",
+    "zod": "^4.6.7"
   },
-  "devDependencies": {},
-  "keywords": ["meal-planner", "nutrition", "student", "india"],
+  "keywords": [
+    "meal-planner",
+    "nutrition",
+    "student",
+    "india",
+    "sqlite",
+    "budget"
+  ],
   "license": "MIT"
 }

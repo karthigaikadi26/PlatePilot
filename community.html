@@ -1,63 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Community — PlatePilot</title>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="animations.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Community — PlatePilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
 </head>
 <body>
-    <header class="site-header">
-        <a class="brand" href="index.html">
-            <span class="brand-mark">✳</span> PlatePilot</a>
-            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="planner.html">Meal planner</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="recipes.html">Recipes</a>
-                <a href="shopping.html">Shopping list</a>
-                <a class="active" href="community.html">Community</a>
-                <a class="button button-small" href="planner.html">Start planning ↗</a>
-                </nav>
-    </header>
-<main class="container page-main">
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✳</span> PlatePilot
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="planner.html">Meal planner</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="shopping.html">Shopping list</a>
+      <a class="active" href="community.html">Community</a>
+    </nav>
+    <a class="button button-small" href="planner.html">Start planning ↗</a>
+  </header>
+
+  <main class="container page-main">
     <div class="page-intro">
-        <span class="eyebrow">BETTER TOGETHER</span>
-        <h1>The student <em>food club.</em></h1>
-        <p>Share small wins, budget-friendly ideas and kitchen hacks with the PlatePilot community.</p>
-    </div><div class="community-layout">
-        <form class="panel post-form" id="post-form">
-            <h2>Share a tip</h2>
-            <label>Your name<input id="post-name" maxlength="32" placeholder="e.g. Foodie on a budget" required></label>
-            <label>Your tip<textarea id="post-message" rows="4" maxlength="240" placeholder="What's one affordable food tip that works for you?" required></textarea></label>
-            <button class="button button-full">Post to community →</button>
-            <p class="form-note">Demo community board: posts are saved only in this browser.</p>
-        </form>
-        <section>
-            <div class="results-head">
-                <div>
-                <span class="eyebrow">FROM THE COMMUNITY</span>
-                <h2>Fresh ideas</h2>
-                </div>
-                <span class="tag tag-green">Student-powered</span>
-                </div>
-                <div id="community-posts" class="post-list"></div>
-        </section>
+      <span class="eyebrow">BETTER TOGETHER</span>
+      <h1>The student <em>food club.</em></h1>
+      <p>Share small wins, budget-friendly hacks, and high-protein hostel recipes with fellow students.</p>
     </div>
-</main>
-    <footer class="site-footer">
-        <div class="container footer-inner">
-            <a class="brand" href="index.html">✳ PlatePilot</a>
-            <p>© <span data-year></span> PlatePilot</p>
-            <a href="recipes.html">Find recipe ideas ↗</a>
+
+    <div class="community-layout">
+      <form class="panel post-form" id="post-form">
+        <h2>Share a tip</h2>
+        <label>
+          Your name
+          <input id="post-name" maxlength="32" placeholder="e.g. Priya (2nd Year) or Gym Bro" required>
+        </label>
+        <label>
+          Category
+          <select id="post-tag">
+            <option value="Hostel Hacks">Hostel Hacks</option>
+            <option value="Budget Snack">Budget Snack</option>
+            <option value="High Protein">High Protein</option>
+            <option value="Smart Shopping">Smart Shopping</option>
+            <option value="Meal Prep">Meal Prep</option>
+            <option value="General">General</option>
+          </select>
+        </label>
+        <label>
+          Your tip
+          <textarea id="post-message" rows="4" maxlength="300" placeholder="What is one affordable food hack or recipe shortcut that saved you money or time?" required></textarea>
+        </label>
+        <button class="button button-full" type="submit">Post to community →</button>
+        <p class="form-note">Community tips are stored in the SQLite database and accessible to all students.</p>
+      </form>
+
+      <section>
+        <div class="results-head">
+          <div>
+            <span class="eyebrow">FROM THE COMMUNITY</span>
+            <h2>Fresh ideas</h2>
+          </div>
+          <span class="tag tag-green">Student-powered</span>
         </div>
-    </footer>
-    <script src="storage.js"></script>
-    <script src="app.js"></script>
-    <script>PlatePilot.initCommunity();</script>
+        <div id="community-posts" class="post-list">
+          <div class="empty-state">
+            <p>Loading community posts...</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">✳ PlatePilot</a>
+      <p>© <span data-year></span> PlatePilot</p>
+      <a href="recipes.html">Find recipe ideas ↗</a>
+    </div>
+  </footer>
+
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    PlatePilot.initCommunity();
+  </script>
 </body>
 </html>

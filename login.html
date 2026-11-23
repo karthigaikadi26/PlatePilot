@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login — PlatePilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✳</span> PlatePilot
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="planner.html">Meal planner</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="recipes.html">Recipes</a>
+      <a href="shopping.html">Shopping list</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <a class="button button-small" href="register.html">Sign up <span>↗</span></a>
+  </header>
+
+  <main class="container page-main" style="max-width:480px;margin-inline:auto;padding-top:40px">
+    <div class="panel" style="padding:32px">
+      <div style="text-align:center;margin-bottom:24px">
+        <span class="eyebrow">WELCOME BACK</span>
+        <h1 style="font:800 28px Manrope;margin:8px 0">Log in to <em>PlatePilot</em></h1>
+        <p style="font-size:13px;color:var(--muted)">Access your personal weekly meal plans and grocery lists.</p>
+      </div>
+
+      <div style="background:#edf4eb;border:1px dashed #c0d8c2;border-radius:10px;padding:12px;margin-bottom:20px;font-size:12px;display:flex;justify-content:space-between;align-items:center">
+        <div>
+          <b style="color:var(--green)">Demo Student Account:</b><br>
+          <span style="color:#55665c">student@platepilot.edu</span>
+        </div>
+        <button type="button" id="fill-demo-btn" class="button button-small button-outline" style="padding:4px 8px;font-size:11px">Auto Fill</button>
+      </div>
+
+      <form id="login-form" style="display:grid;gap:16px">
+        <label style="display:grid;gap:6px;font-size:12px;font-weight:700">
+          Email address
+          <input type="email" id="email" required placeholder="you@hostel.edu" style="padding:12px;border:1px solid var(--line);border-radius:8px">
+        </label>
+        <label style="display:grid;gap:6px;font-size:12px;font-weight:700">
+          Password
+          <input type="password" id="password" required placeholder="••••••••" style="padding:12px;border:1px solid var(--line);border-radius:8px">
+        </label>
+        <button type="submit" id="submit-btn" class="button button-full" style="margin-top:8px">Log in →</button>
+      </form>
+
+      <div style="text-align:center;margin-top:20px;font-size:13px;color:var(--muted)">
+        Don't have an account? <a href="register.html" class="text-link" style="font-size:13px">Create an account</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">✳ PlatePilot</a>
+      <p>© <span data-year></span> PlatePilot</p>
+      <a href="index.html">Back to Home ↗</a>
+    </div>
+  </footer>
+
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.querySelector("#login-form");
+      const emailInput = document.querySelector("#email");
+      const passInput = document.querySelector("#password");
+      const demoBtn = document.querySelector("#fill-demo-btn");
+      const submitBtn = document.querySelector("#submit-btn");
+
+      if (demoBtn) {
+        demoBtn.addEventListener("click", () => {
+          emailInput.value = "student@platepilot.edu";
+          passInput.value = "HostelPass123!";
+          PlatePilot.showToast("Demo credentials filled!", "info");
+        });
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = emailInput.value.trim();
+        const password = passInput.value;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Logging in...";
+
+        try {
+          await PlatePilotAuth.login(email, password);
+          PlatePilot.showToast("Login successful! Redirecting...", "success");
+          setTimeout(() => {
+            window.location.href = "planner.html";
+          }, 800);
+        } catch (err) {
+          PlatePilot.showToast(err.message, "error");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "Log in →";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

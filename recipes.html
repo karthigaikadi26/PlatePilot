@@ -1,55 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Recipes — PlatePilot</title>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="responsive.css">
-        <link rel="stylesheet" href="animations.css">
-    </head>
-    <body>
-        <header class="site-header">
-            <a class="brand" href="index.html">
-                <span class="brand-mark">✳</span> PlatePilot</a>
-                <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-                <nav class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="planner.html">Meal planner</a>
-                    <a href="dashboard.html">Dashboard</a>
-                    <a class="active" href="recipes.html">Recipes</a>
-                    <a href="shopping.html">Shopping list</a>
-                    <a href="community.html">Community</a>
-                </nav>
-                <a class="button button-small" href="planner.html">Plan meals ↗</a>
-            </header>
-<main class="container page-main">
-    <div class="page-intro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recipes — PlatePilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">✳</span> PlatePilot
+    </a>
+    <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="planner.html">Meal planner</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a class="active" href="recipes.html">Recipes</a>
+      <a href="shopping.html">Shopping list</a>
+      <a href="community.html">Community</a>
+    </nav>
+    <a class="button button-small" href="planner.html">Plan meals ↗</a>
+  </header>
+
+  <main class="container page-main">
+    <div class="page-intro" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
+      <div>
         <span class="eyebrow">SIMPLE FOOD, GOOD ENERGY</span>
         <h1>Recipes for <em>real life.</em></h1>
-        <p>Affordable, student-friendly ideas with familiar ingredients.</p>
+        <p>Affordable, student-friendly ideas with familiar pantry ingredients and high-protein nutrition.</p>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="button button-small button-outline" id="filter-my-recipes-btn">My custom recipes</button>
+        <button class="button button-small" id="open-add-recipe-modal">+ Submit recipe</button>
+      </div>
     </div>
+
     <div class="recipe-toolbar">
-        <input id="recipe-search" type="search" placeholder="Search meals or ingredients…">
-        <select id="recipe-filter">
-            <option value="all">All diets</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="vegan">Vegan</option>
-            <option value="non-vegetarian">Non-vegetarian</option>
-        </select>
+      <input id="recipe-search" type="search" placeholder="Search meals or ingredients (e.g. paneer, oats, dal)…">
+      <select id="recipe-filter" aria-label="Filter by diet">
+        <option value="all">All diets</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="vegan">Vegan</option>
+        <option value="non-vegetarian">Non-vegetarian</option>
+      </select>
+      <select id="category-filter" aria-label="Filter by category">
+        <option value="all">All categories</option>
+        <option value="Breakfast">Breakfast</option>
+        <option value="Lunch">Lunch</option>
+        <option value="Dinner">Dinner</option>
+        <option value="Snack">Snack</option>
+      </select>
     </div>
-    <div id="recipe-grid" class="recipe-grid"></div>
-</main>
-<footer class="site-footer">
+
+    <div id="recipe-grid" class="recipe-grid">
+      <div class="empty-state" style="grid-column:1/-1">
+        <p>Loading nutritious student recipes from SQLite database...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
     <div class="container footer-inner">
-        <a class="brand" href="index.html">✳ PlatePilot</a>
-        <p>© <span data-year></span> PlatePilot</p>
-        <a href="community.html">Share your ideas ↗</a>
+      <a class="brand" href="index.html">✳ PlatePilot</a>
+      <p>© <span data-year></span> PlatePilot</p>
+      <a href="community.html">Share your ideas ↗</a>
     </div>
-</footer>
-<script src="storage.js"></script>
-<script src="recipes.js"></script>
-<script src="app.js"></script>
+  </footer>
+
+  <script src="storage.js"></script>
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+  <script src="recipes.js"></script>
 </body>
 </html>
