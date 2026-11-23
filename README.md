@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PlatePilot — Eat well. Spend smart.
 
 PlatePilot is a responsive student-focused meal planning mini-project. It helps college students and hostel residents explore affordable Indian meals, generate a weekly plan, review estimated nutrition, and prepare a shopping checklist.
@@ -82,3 +83,6 @@ PlatePilot/
 ## Customization
 
 Edit `data/recipes.json` to add recipes. Each recipe has `id`, `name`, `emoji`, `diet`, `cost`, `calories`, `protein`, `time`, `category`, `ingredients`, and `description`.
+=======
+# PlatePilot
+>>>>>>> origin/main
